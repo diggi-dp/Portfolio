@@ -1,3 +1,4 @@
+import Experience from '@/components/Experience';
 import Hero from '@/components/Hero';
 import Skills from '@/components/Skills';
 import { FloatingNav } from '@/components/ui/floating-navbar';
@@ -20,6 +21,7 @@ export default function Home() {
           <div className="absolute inset-y-0 w-1 bg-slate-500"></div>
         </div>
         <Skills />
+        <Experience />
       </div>
     </main>
   );

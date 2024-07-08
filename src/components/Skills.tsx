@@ -27,7 +27,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-md p-4 md:max-w-3xl">
+    <div className="mx-auto max-w-md px-4 py-12 md:max-w-3xl">
       <h2 className="mb-4 flex items-center justify-center text-3xl font-bold">
         Technical Skills{' '}
         <span className="pl-2">
