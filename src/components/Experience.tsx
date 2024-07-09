@@ -11,10 +11,10 @@ import { PiToolboxFill } from 'react-icons/pi';
 
 export default function Experience() {
   return (
-    <section id="experience" className="mb-28 scroll-mt-28 px-4 py-12 sm:mb-40">
-      <h2 className="mb-4 flex items-center justify-center text-3xl font-bold">
-        Experience{' '}
-        <span className="pl-2">
+    <section id="experience" className="scroll-mt-28 px-4 py-12">
+      <h2 className="mb-10 flex items-center justify-center text-3xl font-bold">
+        Experience
+        <span className="pl-3">
           <PiToolboxFill size={30} color="white" />
         </span>
       </h2>
