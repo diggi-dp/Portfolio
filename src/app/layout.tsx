@@ -7,8 +7,26 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Digpal Singh Mandloi | Portfolio',
-  description:
-    'Digpal Singh Mandloi is Software Developer and has expertise in ReactJS having more than 2 years of experience.',
+  description: 'Software Developer with expertise in ReactJS',
+  keywords: [
+    'reactjs',
+    'software developer',
+    'portfolio',
+    'nextjs',
+    'nextjs portfolio',
+    'nextjs with tailwindcss',
+  ],
+  authors: [{ name: 'Digpal Singh Mandloi' }],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Digpal Singh Mandloi | Portfolio',
+    description: 'Software Developer with expertise in ReactJS',
+    url: 'https://digpalsingh.vercel.app',
+    siteName: 'Digpal Singh Mandloi',
+  },
 };
 
 export default function RootLayout({

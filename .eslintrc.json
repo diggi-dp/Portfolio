@@ -39,6 +39,7 @@
       "warn",
       "as-needed"
     ],
+    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/array-type": [
       "warn",
       {

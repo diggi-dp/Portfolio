@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@radix-ui/react-hover-card": "^1.1.1",
+    "@radix-ui/react-label": "^2.1.0",
+    "@tabler/icons-react": "^3.10.0",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
     "clsx": "^2.1.1",
@@ -25,6 +27,7 @@
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.4",
     "next-themes": "^0.3.0",
+    "nodemailer": "^6.9.14",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "qss": "^3.0.0",
@@ -36,6 +39,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-vertical-timeline-component": "^3.3.6",
