@@ -36,16 +36,20 @@ const Hero = () => {
             Hi, I&apos;m Digpal Singh Mandloi - Your Go-to Full Stack Developer
           </p>
           <div className="flex flex-wrap justify-center gap-4 sm:flex-nowrap">
-            <MagicButton
-              title="Contact me Here"
-              icon={<FaArrowRightLong size={22} />}
-              position="right"
-            />
-            <MagicButton
-              title="Download CV"
-              icon={<FaCloudDownloadAlt size={22} />}
-              position="left"
-            />
+            <Link href="#contact">
+              <MagicButton
+                title="Contact me Here"
+                icon={<FaArrowRightLong size={22} />}
+                position="right"
+              />
+            </Link>
+            <Link href="/Digpal_CV_24.pdf" download="cv.pdf">
+              <MagicButton
+                title="Download CV"
+                icon={<FaCloudDownloadAlt size={22} />}
+                position="left"
+              />
+            </Link>
             <Link
               className="h-13 w-13 borderBlack flex cursor-pointer items-center gap-2 rounded-full bg-gradient-to-r from-slate-900 to-slate-700 bg-[length:200%_100%] p-4 text-gray-700 transition hover:scale-[1.15] focus:scale-[1.15] active:scale-105 md:mt-9 dark:bg-white/10 dark:text-white/60"
               href="https://www.linkedin.com/in/digpal-singh-mandloi-91b865268/"

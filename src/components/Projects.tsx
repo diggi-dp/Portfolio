@@ -1,5 +1,5 @@
 import React from 'react';
-import { GiSkills } from 'react-icons/gi';
+import { GrProjects } from 'react-icons/gr';
 import { WobbleCard } from './ui/wobble-card';
 import { ProjectsData } from '@/lib/data';
 import { LinkPreview } from './ui/link-preview';
@@ -10,7 +10,7 @@ const Projects = () => {
       <h2 className="mb-10 flex items-center justify-center text-3xl font-bold">
         Projects
         <span className="pl-3">
-          <GiSkills size={30} color="white" />
+          <GrProjects size={26} color="#fbd38d" />
         </span>
       </h2>
 

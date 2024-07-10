@@ -15,7 +15,7 @@ export default function Experience() {
       <h2 className="mb-10 flex items-center justify-center text-3xl font-bold">
         Experience
         <span className="pl-3">
-          <PiToolboxFill size={30} color="white" />
+          <PiToolboxFill size={30} color="#fbd38d" />
         </span>
       </h2>
       <VerticalTimeline lineColor="#ddd">

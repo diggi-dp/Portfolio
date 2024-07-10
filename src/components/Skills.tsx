@@ -8,7 +8,7 @@ const Skills = () => {
       <h2 className="mb-10 flex items-center justify-center text-3xl font-bold">
         Technical Skills
         <span className="pl-3">
-          <GiSkills size={30} color="white" />
+          <GiSkills size={30} color="#fbd38d" />
         </span>
       </h2>
       <BlockRenderer Skills={SkillsData} />
