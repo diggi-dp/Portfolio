@@ -22,6 +22,8 @@ import {
   SiPrisma,
   SiFramer,
   SiAntdesign,
+  SiExpo,
+  SiChartdotjs,
 } from 'react-icons/si';
 import { CgWorkAlt } from 'react-icons/cg';
 import { GiSkills } from 'react-icons/gi';
@@ -40,6 +42,8 @@ const iconMap = {
   css: FaCss3,
   js: FaJs,
   mui: SiMui,
+  expo: SiExpo,
+  chart: SiChartdotjs,
   antdesign: SiAntdesign,
   prisma: SiPrisma,
   git: FaGitAlt,
@@ -88,6 +92,14 @@ export const SkillsData = [
     icon: createIcon('nextjs', { color: '#fff', size: 22 }),
   },
   {
+    name: 'TypeScript',
+    icon: createIcon('typescript', { color: '#3178C6', size: 22 }),
+  },
+  {
+    name: 'Expo',
+    icon: createIcon('expo', { color: '#fff', size: 22 }),
+  },
+  {
     name: 'Node.js',
     icon: createIcon('nodejs', { color: '#339933', size: 22 }),
   },
@@ -99,17 +111,14 @@ export const SkillsData = [
     name: 'Nest.js',
     icon: createIcon('nestjs', { color: '#E0234E', size: 22 }),
   },
-  {
-    name: 'TypeScript',
-    icon: createIcon('typescript', { color: '#3178C6', size: 22 }),
-  },
+
   { name: 'HTML', icon: createIcon('html', { color: '#E34F26', size: 22 }) },
   { name: 'CSS', icon: createIcon('css', { color: '#1572B6', size: 22 }) },
-  { name: 'GIT', icon: createIcon('git', { color: '#F05032', size: 22 }) },
   {
     name: 'Ant Design',
     icon: createIcon('antdesign', { color: '#F05032', size: 22 }),
   },
+  { name: 'GIT', icon: createIcon('git', { color: '#F05032', size: 22 }) },
   {
     name: 'Material UI',
     icon: createIcon('mui', { color: '#007FFF', size: 22 }),
@@ -122,31 +131,6 @@ export const SkillsData = [
 ];
 
 export const experiencesData: Experience[] = [
-  {
-    title: 'ReactJS Developer',
-    company: 'Soft Spectrum Technology',
-    description: [
-      '🚀 Worked on developing and maintaining the Mechanic24 project using ReactJS, Redux, MUI.',
-      '🔩 Built reusable components.',
-      '💡 Conducted user requirements analysis to design and program applications.',
-      '📋 Worked with and wrote semantic HTML tags.',
-      '🌐 Extensively worked with APIs.',
-    ],
-    icon: createIcon('workAlt', { size: 40 }),
-    date: '2021 - 2023',
-  },
-  {
-    title: 'Software Engineer',
-    company: 'CreativeEncode technology',
-    description: [
-      '🚀 Developed and maintained UI components using modern React libraries',
-      '📱 Implemented responsive design for mobile and web applications.',
-      '📚 Learned Next.js and created an admin panel.',
-      '📊 Created a quiz app using React Native.',
-    ],
-    icon: createIcon('workAlt', { size: 40 }),
-    date: '2023 - 2023',
-  },
   {
     title: 'Software Engineer',
     company: 'Inara Consultancy Services',
@@ -164,6 +148,31 @@ export const experiencesData: Experience[] = [
     ],
     icon: createIcon('workAlt', { size: 40 }),
     date: '2023 - Present',
+  },
+  {
+    title: 'Software Engineer',
+    company: 'CreativeEncode technology',
+    description: [
+      '🚀 Developed and maintained UI components using modern React libraries',
+      '📱 Implemented responsive design for mobile and web applications.',
+      '📚 Learned Next.js and created an admin panel.',
+      '📊 Created a quiz app using React Native.',
+    ],
+    icon: createIcon('workAlt', { size: 40 }),
+    date: '2023 - 2023',
+  },
+  {
+    title: 'ReactJS Developer',
+    company: 'Soft Spectrum Technology',
+    description: [
+      '🚀 Worked on developing and maintaining the Mechanic24 project using ReactJS, Redux, MUI.',
+      '🔩 Built reusable components.',
+      '💡 Conducted user requirements analysis to design and program applications.',
+      '📋 Worked with and wrote semantic HTML tags.',
+      '🌐 Extensively worked with APIs.',
+    ],
+    icon: createIcon('workAlt', { size: 40 }),
+    date: '2021 - 2023',
   },
 ];
 
@@ -213,6 +222,7 @@ export const ProjectsData = [
     liveLink: 'https://admin-penal-83e55.firebaseapp.com/',
     techStack: [
       createIcon('react', { color: '#61DAFB', size: 24 }),
+      createIcon('chart', { color: '#f77377', size: 24 }),
       createIcon('js', { color: '#F7DF1E', size: 24 }),
       createIcon('css', { color: '#1572B6', size: 24 }),
       createIcon('html', { color: '#E34F26', size: 24 }),

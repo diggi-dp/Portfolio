@@ -7,7 +7,7 @@ import { LinkPreview } from './ui/link-preview';
 const Projects = () => {
   return (
     <div id="projects" className="mx-auto max-w-5xl px-4 py-12">
-      <h2 className="mb-10 flex items-center justify-center text-3xl font-bold">
+      <h2 className="mb-10 flex items-center justify-center text-3xl font-bold text-white">
         Projects
         <span className="pl-3">
           <GrProjects size={26} color="#fbd38d" />

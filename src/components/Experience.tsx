@@ -16,7 +16,7 @@ export default function Experience() {
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 px-4 py-12">
-      <h2 className="mb-10 flex items-center justify-center text-3xl font-bold">
+      <h2 className="mb-10 flex items-center justify-center text-3xl font-bold text-white">
         Experience
         <span className="pl-3">
           <PiToolboxFill size={30} color="#fbd38d" />
@@ -47,7 +47,7 @@ export default function Experience() {
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
               <p className="!mt-0 font-normal">{item.company}</p>
-              <ul className="mt-1 list-none font-normal text-gray-700 dark:text-white/75">
+              <ul className="mt-1 list-none font-normal text-white/75">
                 {item.description &&
                   item.description.map((desc: string, i: number) => (
                     <li key={i} className="mb-2">
