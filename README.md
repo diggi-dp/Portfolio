@@ -26,7 +26,3 @@ A showcase of my skills, experience, and projects as a software engineer with ex
 ---------
 :envelope: Want to get in touch? You can reach me at [digpalsingh@gmail.com](mailto:digpalsingh@gmail.com).
 
-**Social Media**
----------------
-:linkedin: Connect with me on LinkedIn: [digpalsingh](https://www.linkedin.com/in/digpal-singh-mandloi-91b865268/)
-:github: Check out my GitHub profile: [digpalsingh](https://github.com/diggi-dp)
