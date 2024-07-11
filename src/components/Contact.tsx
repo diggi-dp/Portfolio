@@ -61,7 +61,7 @@ const Contact = () => {
 
   return (
     <div id="contact" className="mx-auto max-w-md px-4 py-12 md:max-w-3xl">
-      <h2 className="mb-10 flex items-center justify-center text-3xl font-bold">
+      <h2 className="mb-10 flex items-center justify-center text-3xl font-bold text-white">
         Contact
         <span className="pl-3">
           <GrContactInfo size={30} color="#fbd38d" />
@@ -73,7 +73,12 @@ const Contact = () => {
           Want to discuss a potential project or opportunity? I&apos;d love to
           hear from you. <br /> Contact me directly at{' '}
           <span
-            className="cursor-pointer bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-lg font-semibold text-transparent"
+            className="cursor-pointer text-lg font-semibold"
+            style={{
+              backgroundImage: 'linear-gradient(to right, #F59E0B, #EC4899)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
             onClick={handleCopy}
             title="click to copy"
           >
@@ -131,7 +136,7 @@ const Contact = () => {
           </LabelInputContainer>
 
           <button
-            className="group/btn relative block h-12 w-full rounded-md bg-gradient-to-br from-zinc-700 to-zinc-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+            className="group/btn relative block h-12 w-full rounded-md bg-gradient-to-br from-zinc-700 to-zinc-600 font-medium text-white shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
             disabled={submitting}
           >
@@ -146,7 +151,7 @@ const Contact = () => {
           )}
           {error && <p className="pt-2 text-center text-red-600">{error}</p>}
 
-          <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+          <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-700 to-transparent" />
         </form>
       </div>
     </div>

@@ -5,7 +5,7 @@ import { SkillsData } from '@/lib/data';
 const Skills = () => {
   return (
     <div id="skills" className="mx-auto max-w-md px-4 py-12 md:max-w-3xl">
-      <h2 className="mb-10 flex items-center justify-center text-3xl font-bold">
+      <h2 className="mb-10 flex items-center justify-center text-3xl font-bold text-white">
         Technical Skills
         <span className="pl-3">
           <GiSkills size={30} color="#fbd38d" />
