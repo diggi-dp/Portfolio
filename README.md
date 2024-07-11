@@ -24,5 +24,5 @@ A showcase of my skills, experience, and projects as a software engineer with ex
 
 **Contact**
 ---------
-:envelope: Want to get in touch? You can reach me at [digpalsingh@gmail.com](mailto:digpalsingh@gmail.com).
+:envelope: Want to get in touch? You can reach me at [digpalsingh@gmail.com](mailto:digpalsinghmandloi1@gmail.com).
 
