@@ -22,14 +22,11 @@ A showcase of my skills, experience, and projects as a software engineer with ex
 
 
 
-:desktop_compu
-
 **Contact**
 ---------
 :envelope: Want to get in touch? You can reach me at [digpalsingh@gmail.com](mailto:digpalsingh@gmail.com).
 
 **Social Media**
 ---------------
-:twitter: Follow me on Twitter: [@digpalsingh](https://twitter.com/digpalsingh)
-:linkedin: Connect with me on LinkedIn: [digpalsingh](https://www.linkedin.com/in/digpalsingh)
-:github: Check out my GitHub profile: [digpalsingh](https://github.com/digpalsingh)
+:linkedin: Connect with me on LinkedIn: [digpalsingh](https://www.linkedin.com/in/digpal-singh-mandloi-91b865268/)
+:github: Check out my GitHub profile: [digpalsingh](https://github.com/diggi-dp)
