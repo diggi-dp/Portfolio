@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Portfolio
 
-## Getting Started
+Welcome to my personal portfolio website! Here, you can learn more about me, my skills, my work experience, and my projects.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [About](#about)
+- [Skills](#skills)
+- [Experience](#experience)
+- [Projects](#projects)
+- [Contact](#contact)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Hi there! I'm a software engineer with a passion for building web applications using modern technologies. I have experience working with a variety of front-end and back-end frameworks, including React, Node.js, and Next.js.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Skills
 
-## Learn More
+Here are some of the skills I have:
 
-To learn more about Next.js, take a look at the following resources:
+<div className="flex flex-wrap gap-4">
+  {SkillsData.map((skill) => (
+    <div key={skill.name} className="flex items-center gap-2">
+      <span>{skill.icon}</span>
+      <span>{skill.name}</span>
+    </div>
+  ))}
+</div>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Experience
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Here is a list of my work experience:
 
-## Deploy on Vercel
+<div className="flex flex-col gap-4">
+  {experiencesData.map((experience) => (
+    <div key={experience.title} className="flex flex-col gap-2">
+      <div className="flex items-center gap-2">
+        <span>{experience.icon}</span>
+        <span>{experience.title}</span>
+      </div>
+      <div className="flex flex-col gap-1">
+        <span>{experience.company}</span>
+        <span>{experience.date}</span>
+      </div>
+      <ul className="list-disc list-inside">
+        {experience.description.map((desc, index) => (
+          <li key={index}>{desc}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Projects
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Here are some of the projects I've worked on:
+
+<div className="flex flex-col gap-4">
+  {ProjectsData.map((project) => (
+    <div key={project.name} className="flex flex-col gap-2">
+      <div className="flex items-center gap-2">
+        <span>{project.techStack.map((icon, index) => (
+          <span key={index}>{icon}</span>
+        ))}</span>
+        <span>{project.name}</span>
+      </div>
+      <div className="flex flex-col gap-1">
+        <span>{project.description}</span>
+        <span>
+          <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+            Live Demo
+          </a>
+        </span>
+      </div>
+      <ul className="list-disc list-inside">
+        {project.techStack.map((icon, index) => (
+          <li key={index}>{icon}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
+
+## Contact
+
+Want to get in touch? You can reach me at [digpalsingh@gmail.com](mailto:digpalsingh@gmail.com).
+
+## License
+
+This project is licensed under the MIT License.
