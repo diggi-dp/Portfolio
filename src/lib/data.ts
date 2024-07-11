@@ -71,8 +71,8 @@ const createIcon = (iconName: keyof typeof iconMap, props?: object) =>
 export const NavItems = [
   { name: 'Home', link: '#home', icon: createIcon('home') },
   { name: 'Skills', link: '#skills', icon: createIcon('skill') },
-  { name: 'Projects', link: '#projects', icon: createIcon('work') },
   { name: 'Experience', link: '#experience', icon: createIcon('experience') },
+  { name: 'Projects', link: '#projects', icon: createIcon('work') },
   { name: 'Contact', link: '#contact', icon: createIcon('contact') },
 ];
 
