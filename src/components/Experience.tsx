@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -8,10 +8,14 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import { experiencesData } from '@/lib//data';
 import { PiToolboxFill } from 'react-icons/pi';
+import { useInView } from 'framer-motion';
 
 export default function Experience() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.2, once: true });
+
   return (
-    <section id="experience" className="scroll-mt-28 px-4 py-12">
+    <section id="experience" ref={ref} className="scroll-mt-28 px-4 py-12">
       <h2 className="mb-10 flex items-center justify-center text-3xl font-bold">
         Experience
         <span className="pl-3">
@@ -22,7 +26,7 @@ export default function Experience() {
         {experiencesData.map((item, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
-              visible={true}
+              visible={isInView}
               contentStyle={{
                 background: '#1a2437',
                 boxShadow: 'none',

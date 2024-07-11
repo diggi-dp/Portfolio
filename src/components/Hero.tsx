@@ -26,19 +26,20 @@ const Hero = () => {
       <div className="relative z-10 my-20 flex justify-center">
         <div className="flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
           <h2 className="mx-auto max-w-80 text-xs uppercase tracking-widest text-blue-100">
-            WELCOME TO MY DIGITAL SPACE
+            Transforming Ideas into Reality
           </h2>
           <TextGenerateEffect
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
-            words="Crafting Intuitive and Engaging User Experiences"
+            words="Building Scalable, Secure, and User-Centric Applications"
           />
           <p className="mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-center text-sm text-transparent md:text-lg md:tracking-wider lg:text-2xl">
-            Hi, I&apos;m Digpal Singh Mandloi - Your Go-to Full Stack Developer
+            Hi, I&apos;m Digpal Singh Mandloi - Your Go-to Partner for
+            Innovative Solutions
           </p>
           <div className="flex flex-wrap justify-center gap-4 sm:flex-nowrap">
             <Link href="#contact">
               <MagicButton
-                title="Contact me Here"
+                title="Get in Touch"
                 icon={<FaArrowRightLong size={22} />}
                 position="right"
               />
