@@ -195,7 +195,7 @@ export const ProjectsData = [
     name: 'Portfolio',
     description:
       'This portfolio website is a testament to my skills in front-end development, built using HTML, CSS, and JavaScript. With a focus on clean design and intuitive navigation, this project demonstrates my ability to craft engaging user interfaces and deliver a smooth user experience.',
-    liveLink: 'digpalsingh.vercel.app',
+    liveLink: '/',
     techStack: [
       createIcon('react', { color: '#61DAFB', size: 24 }),
       createIcon('nextjs', { color: '#000000', size: 24 }),

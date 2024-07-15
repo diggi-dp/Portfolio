@@ -102,6 +102,10 @@ export const LinkPreview = ({
           onMouseMove={handleMouseMove}
           className={cn('text-black dark:text-white', className)}
           href={url}
+          onClick={(event) => {
+            event.preventDefault();
+            window.open(url, '_blank');
+          }}
         >
           {children}
         </HoverCardPrimitive.Trigger>

@@ -32,7 +32,14 @@ const Hero = () => {
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
             words="Building Scalable, Secure, and User-Centric Applications"
           />
-          <p className="mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-center text-sm text-transparent md:text-lg md:tracking-wider lg:text-2xl">
+          <p
+            className="mb-4 w-fit text-center text-sm text-transparent md:text-lg md:tracking-wider lg:text-2xl"
+            style={{
+              backgroundImage: 'linear-gradient(to right, #F59E0B, #EC4899)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
             Hi, I&apos;m Digpal Singh Mandloi - Your Go-to Partner for
             Innovative Solutions
           </p>
@@ -44,7 +51,7 @@ const Hero = () => {
                 position="right"
               />
             </Link>
-            <Link href="/Digpal_CV_24.pdf" download="cv.pdf">
+            <Link href="/DIGPAL_SINGH_MANDLOI.pdf" download="cv.pdf">
               <MagicButton
                 title="Download CV"
                 icon={<FaCloudDownloadAlt size={22} />}

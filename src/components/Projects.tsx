@@ -18,10 +18,16 @@ const Projects = () => {
         {ProjectsData.map((project, index) => (
           <WobbleCard key={index} containerClassName="col-span-1 lg:w-full">
             <div className="">
-              <h2 className="text-balance bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-left text-base font-semibold tracking-[-0.015em] md:text-xl lg:text-3xl">
-                <span className="bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">
-                  {project.name}
-                </span>
+              <h2
+                className="w-fit text-balance text-left text-base font-semibold tracking-[-0.015em] md:text-xl lg:text-3xl"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(to right, #F59E0B, #EC4899)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                {project.name}
               </h2>
               <p className="mt-4 text-left text-base/6 text-white">
                 {project.description}
