@@ -178,6 +178,18 @@ export const experiencesData: Experience[] = [
 
 export const ProjectsData = [
   {
+    name: 'Dashboard DP',
+    description:
+      'This project is a feature-rich dashboard built with modern web technologies including React, Vite, TypeScript, Tailwind CSS, and ShadCN UI. It is designed to provide a clean and responsive user interface for data visualization and management.',
+    liveLink: 'https://dashboard-dp.vercel.app/',
+    techStack: [
+      createIcon('react', { color: '#61DAFB', size: 24 }),
+      createIcon('tailwind', { color: '#06B6D4', size: 24 }),
+      createIcon('shadcn', { color: '#fff', size: 24 }),
+      createIcon('typescript', { color: '#3178C6', size: 24 }),
+    ],
+  },
+  {
     name: 'Breadit',
     description:
       'Breadit is a cutting-edge nextJs-13 full stack application utilizing app-router, designed to provide a seamless user experience. Leveraging the power of React, Next.js, Tailwind, Shadcn, Prisma, JavaScript, and TypeScript, this project showcases a robust and scalable architecture.',

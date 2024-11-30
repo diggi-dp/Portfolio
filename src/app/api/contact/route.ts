@@ -13,20 +13,18 @@ export async function POST(req: Request) {
         { status: 400, headers: { 'Content-Type': 'application/json' } },
       );
     }
-    console.log('email');
+
     await sendEmail({
       firstname,
       lastname,
       email,
       text: textarea,
     });
-    console.log('sent');
 
     return NextResponse.json({
       msg: 'success',
     });
   } catch (error) {
-    console.log(error);
     if (error instanceof SyntaxError || error instanceof TypeError) {
       return new Response(JSON.stringify({ error: 'Invalid data passed.' }), {
         status: 422,
