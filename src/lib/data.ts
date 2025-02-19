@@ -144,23 +144,23 @@ export const experiencesData: Experience[] = [
       '🕷️ Fixed defects communicated by testers.',
       '💻 Developed code based on requirements analysis, bug fixing, and product maintenance.',
       '📊 Used various CMS such as keystoneJS, TinaCMS',
-      '📈 Worked on multiple projects such as Atlantis Health, Swerve, WaweBites and updates.',
+      '📈 Worked on multiple projects such as PMS, Stride etc.',
     ],
     icon: createIcon('workAlt', { size: 40 }),
     date: '2023 - Present',
   },
-  {
-    title: 'Software Engineer',
-    company: 'CreativeEncode technology',
-    description: [
-      '🚀 Developed and maintained UI components using modern React libraries',
-      '📱 Implemented responsive design for mobile and web applications.',
-      '📚 Learned Next.js and created an admin panel.',
-      '📊 Created a quiz app using React Native.',
-    ],
-    icon: createIcon('workAlt', { size: 40 }),
-    date: '2023 - 2023',
-  },
+  // {
+  //   title: 'Software Engineer',
+  //   company: 'CreativeEncode technology',
+  //   description: [
+  //     '🚀 Developed and maintained UI components using modern React libraries',
+  //     '📱 Implemented responsive design for mobile and web applications.',
+  //     '📚 Learned Next.js and created an admin panel.',
+  //     '📊 Created a quiz app using React Native.',
+  //   ],
+  //   icon: createIcon('workAlt', { size: 40 }),
+  //   date: '2023 - 2023',
+  // },
   {
     title: 'ReactJS Developer',
     company: 'Soft Spectrum Technology',
@@ -206,7 +206,7 @@ export const ProjectsData = [
   {
     name: 'Portfolio',
     description:
-      'This portfolio website is a testament to my skills in front-end development, built using HTML, CSS, and JavaScript. With a focus on clean design and intuitive navigation, this project demonstrates my ability to craft engaging user interfaces and deliver a smooth user experience.',
+      'This portfolio website is a testament to my skills in front-end development, built using NextJS. With a focus on clean design and intuitive navigation, this project demonstrates my ability to craft engaging user interfaces and deliver a smooth user experience.',
     liveLink: '/',
     techStack: [
       createIcon('react', { color: '#61DAFB', size: 24 }),
