@@ -144,23 +144,23 @@ export const experiencesData: Experience[] = [
       '🕷️ Fixed defects communicated by testers.',
       '💻 Developed code based on requirements analysis, bug fixing, and product maintenance.',
       '📊 Used various CMS such as keystoneJS, TinaCMS',
-      '📈 Worked on multiple projects such as PMS, Stride etc.',
+      '📈 Worked on multiple projects such as PMS, Stride, Atlantis Health etc.',
     ],
     icon: createIcon('workAlt', { size: 40 }),
-    date: '2023 - Present',
+    date: ' Aug 2023 - Present',
   },
-  // {
-  //   title: 'Software Engineer',
-  //   company: 'CreativeEncode technology',
-  //   description: [
-  //     '🚀 Developed and maintained UI components using modern React libraries',
-  //     '📱 Implemented responsive design for mobile and web applications.',
-  //     '📚 Learned Next.js and created an admin panel.',
-  //     '📊 Created a quiz app using React Native.',
-  //   ],
-  //   icon: createIcon('workAlt', { size: 40 }),
-  //   date: '2023 - 2023',
-  // },
+  {
+    title: 'Software Engineer',
+    company: 'CreativeEncode technology',
+    description: [
+      '🚀 Developed and maintained UI components using modern React libraries',
+      '📱 Implemented responsive design for mobile and web applications.',
+      '📚 Learned Next.js and created an admin panel.',
+      '📊 Created a quiz app using React Native.',
+    ],
+    icon: createIcon('workAlt', { size: 40 }),
+    date: 'April 2023 - Aug 2023',
+  },
   {
     title: 'ReactJS Developer',
     company: 'Soft Spectrum Technology',
@@ -172,7 +172,7 @@ export const experiencesData: Experience[] = [
       '🌐 Extensively worked with APIs.',
     ],
     icon: createIcon('workAlt', { size: 40 }),
-    date: '2021 - 2023',
+    date: 'Nov 2021 - April 2023',
   },
 ];
 
