@@ -51,7 +51,7 @@ const Hero = () => {
                 position="right"
               />
             </Link>
-            <Link href="/DIGPAL_SINGH_MANDLOI.pdf" download="cv.pdf">
+            <Link href="/DIGPAL_SINGH_MANDLOI_RESUME.pdf" download="cv.pdf">
               <MagicButton
                 title="Download CV"
                 icon={<FaCloudDownloadAlt size={22} />}
