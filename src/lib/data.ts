@@ -172,7 +172,7 @@ export const experiencesData: Experience[] = [
       '🌐 Extensively worked with APIs.',
     ],
     icon: createIcon('workAlt', { size: 40 }),
-    date: 'Nov 2021 - April 2023',
+    date: 'July 2022 - April 2023',
   },
 ];
 
