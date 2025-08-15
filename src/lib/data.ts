@@ -161,19 +161,6 @@ export const experiencesData: Experience[] = [
     icon: createIcon('workAlt', { size: 40 }),
     date: 'April 2023 - Aug 2023',
   },
-  {
-    title: 'ReactJS Developer',
-    company: 'Soft Spectrum Technology',
-    description: [
-      '🚀 Worked on developing and maintaining the Mechanic24 project using ReactJS, Redux, MUI.',
-      '🔩 Built reusable components.',
-      '💡 Conducted user requirements analysis to design and program applications.',
-      '📋 Worked with and wrote semantic HTML tags.',
-      '🌐 Extensively worked with APIs.',
-    ],
-    icon: createIcon('workAlt', { size: 40 }),
-    date: 'July 2022 - April 2023',
-  },
 ];
 
 export const ProjectsData = [
