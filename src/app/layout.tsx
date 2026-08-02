@@ -150,6 +150,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${cinzel.variable} ${outfit.variable} ${jetbrainsMono.variable} dark`}
     >
       <head>
@@ -158,7 +159,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-obsidian-900 text-slate-100 font-sans antialiased overflow-x-hidden">
+      <body
+        suppressHydrationWarning
+        className="bg-obsidian-900 text-slate-100 font-sans antialiased overflow-x-hidden"
+      >
         {/* CRT Scanline & Vignette Overlay Layers */}
         <div className="scanline-overlay" aria-hidden="true" />
         <div className="vignette-overlay" aria-hidden="true" />

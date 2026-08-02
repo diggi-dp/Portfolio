@@ -33,11 +33,11 @@ export const CustomReticleCursor: React.FC = () => {
     };
   }, []);
 
-  if (!isVisible) return null;
-
   return (
     <div
-      className="fixed top-0 left-0 pointer-events-none z-50 transition-transform duration-75 ease-out"
+      className={`fixed top-0 left-0 pointer-events-none z-50 transition-all duration-75 ease-out ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
       style={{
         transform: `translate3d(${pointer.clientX}px, ${pointer.clientY}px, 0)`,
       }}

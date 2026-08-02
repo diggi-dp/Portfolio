@@ -52,27 +52,6 @@ export function useDynamicTelemetry() {
     setBearing(`${String(deg).padStart(3, '0')}° ${dir}`);
   }, [scrollProgress]);
 
-  // Optionally fetch real location coordinates
-  useEffect(() => {
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          const lat = pos.coords.latitude.toFixed(2);
-          const lng = pos.coords.longitude.toFixed(2);
-          const latDir = pos.coords.latitude >= 0 ? 'N' : 'S';
-          const lngDir = pos.coords.longitude >= 0 ? 'E' : 'W';
-          setCoordinates(
-            `${Math.abs(Number(lat))}° ${latDir} ${Math.abs(Number(lng))}° ${lngDir}`
-          );
-        },
-        () => {
-          // Fallback stays as default siteConfig.developer.coordinates
-        },
-        { timeout: 3000 }
-      );
-    }
-  }, []);
-
   return {
     fps,
     altitude,
