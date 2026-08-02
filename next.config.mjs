@@ -2,6 +2,12 @@ import path from 'path';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {
+    resolveAlias: {
+      react: './node_modules/react',
+      'react-dom': './node_modules/react-dom',
+    },
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.alias = {
@@ -13,6 +19,7 @@ const nextConfig = {
     return config;
   },
   images: {
+    qualities: [75, 80, 85, 90, 100],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 2592000,
     remotePatterns: [
