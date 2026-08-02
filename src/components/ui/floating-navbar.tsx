@@ -1,11 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from 'framer-motion';
+import { AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
@@ -16,7 +11,7 @@ export const FloatingNav = ({
   navItems: {
     name: string;
     link: string;
-    icon?: JSX.Element;
+    icon?: React.ReactNode;
   }[];
   className?: string;
 }) => {
@@ -43,33 +38,27 @@ export const FloatingNav = ({
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div
-        initial={{
-          opacity: 1,
-          y: -100,
-        }}
-        animate={{
-          y: visible ? 0 : -100,
+      <div
+        style={{
+          transform: `translateY(${visible ? 0 : -100}px)`,
           opacity: visible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.2,
+          transition: 'all 0.2s ease-in-out',
         }}
         className={cn(
           'fixed inset-x-0 top-10 z-[5000] mx-auto flex max-w-fit items-center justify-center space-x-4 rounded-full border border-slate-800 border-transparent bg-transparent bg-gradient-to-r from-slate-900/70 to-slate-700/70 bg-[length:200%_100%] px-8 py-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]',
-          className,
+          className
         )}
       >
         {navItems.map(
           (
-            navItem: { name: string; link: string; icon?: JSX.Element },
-            idx: number,
+            navItem: { name: string; link: string; icon?: React.ReactNode },
+            idx: number
           ) => (
             <Link
               key={`link=${idx}`}
               href={navItem.link}
               className={cn(
-                'text-neutral-50hover:text-neutral-300 relative flex items-center space-x-1',
+                'text-neutral-50hover:text-neutral-300 relative flex items-center space-x-1'
               )}
             >
               <span className="block sm:hidden">{navItem.icon}</span>
@@ -77,9 +66,9 @@ export const FloatingNav = ({
                 {navItem.name}
               </span>
             </Link>
-          ),
+          )
         )}
-      </motion.div>
+      </div>
     </AnimatePresence>
   );
 };

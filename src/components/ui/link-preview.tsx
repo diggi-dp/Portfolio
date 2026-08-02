@@ -3,12 +3,7 @@ import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
 import Image from 'next/image';
 import { encode } from 'qss';
 import React from 'react';
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useSpring,
-} from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
@@ -62,19 +57,6 @@ export const LinkPreview = ({
     setIsMounted(true);
   }, []);
 
-  const springConfig = { stiffness: 100, damping: 15 };
-  const x = useMotionValue(0);
-
-  const translateX = useSpring(x, springConfig);
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleMouseMove = (event: any) => {
-    const targetRect = event.target.getBoundingClientRect();
-    const eventOffsetX = event.clientX - targetRect.left;
-    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
-    x.set(offsetFromCenter);
-  };
-
   return (
     <>
       {isMounted ? (
@@ -94,15 +76,14 @@ export const LinkPreview = ({
       <HoverCardPrimitive.Root
         openDelay={50}
         closeDelay={100}
-        onOpenChange={(open) => {
+        onOpenChange={(open: boolean) => {
           setOpen(open);
         }}
       >
         <HoverCardPrimitive.Trigger
-          onMouseMove={handleMouseMove}
           className={cn('text-black dark:text-white', className)}
           href={url}
-          onClick={(event) => {
+          onClick={(event: React.MouseEvent) => {
             event.preventDefault();
             window.open(url, '_blank');
           }}
@@ -118,22 +99,11 @@ export const LinkPreview = ({
         >
           <AnimatePresence>
             {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: 20, scale: 0.6 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  transition: {
-                    type: 'spring',
-                    stiffness: 260,
-                    damping: 20,
-                  },
-                }}
-                exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                className="rounded-xl shadow-xl"
+              <div
+                className="rounded-xl shadow-xl transition-all duration-200"
                 style={{
-                  x: translateX,
+                  opacity: isOpen ? 1 : 0,
+                  transform: `scale(${isOpen ? 1 : 0.6})`,
                 }}
               >
                 <Link
@@ -153,7 +123,7 @@ export const LinkPreview = ({
                     alt="preview image"
                   />
                 </Link>
-              </motion.div>
+              </div>
             )}
           </AnimatePresence>
         </HoverCardPrimitive.Content>

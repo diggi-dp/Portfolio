@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     if (!firstname || !lastname || !email || !textarea) {
       return new Response(
         JSON.stringify({ error: 'Please fill out all fields' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } },
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
@@ -35,7 +35,7 @@ export async function POST(req: Request) {
       JSON.stringify({
         error: 'Something went wrong, please try again later.',
       }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } },
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
 }

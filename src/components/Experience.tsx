@@ -11,8 +11,11 @@ import { PiToolboxFill } from 'react-icons/pi';
 import { useInView } from 'framer-motion';
 
 export default function Experience() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.2, once: true });
+  const ref = useRef<HTMLHeadingElement>(null);
+  const isInView = useInView(ref as React.RefObject<Element>, {
+    amount: 0.2,
+    once: true,
+  });
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 px-4 py-12">

@@ -1,32 +1,34 @@
 'use client';
 import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { Skills } from '@/lib/data';
 
 const BlockRenderer = ({ Skills }: { Skills: Skills[] }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref as React.RefObject<Element>, { once: true });
   return (
-    <motion.div
+    <div
       ref={ref}
       className="mb-4 flex flex-wrap justify-center gap-3"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isInView ? 1 : 0 }}
-      transition={{ duration: 1 }}
+      style={{
+        opacity: isInView ? 1 : 0,
+        transition: 'opacity 1s ease-in-out',
+      }}
     >
       {Skills.map((skill, index) => (
-        <motion.div
+        <div
           key={index}
-          className="inline-flex h-12 items-center justify-center rounded-md border border-slate-800 bg-gradient-to-r from-slate-900 to-slate-700 bg-[length:200%_100%] p-4 px-6 font-medium text-slate-400 opacity-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isInView ? 1 : 0 }}
-          transition={{ duration: 1, delay: index * 0.12 }}
+          className="inline-flex h-12 items-center justify-center rounded-md border border-slate-800 bg-gradient-to-r from-slate-900 to-slate-700 bg-[length:200%_100%] p-4 px-6 font-medium text-slate-400"
+          style={{
+            opacity: isInView ? 1 : 0,
+            transition: `opacity 1s ease-in-out ${index * 0.12}s`,
+          }}
         >
           {skill.icon}
           <span className="ml-2 text-lg">{skill.name}</span>
-        </motion.div>
+        </div>
       ))}
-    </motion.div>
+    </div>
   );
 };
 

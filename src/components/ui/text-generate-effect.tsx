@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import { motion, stagger, useAnimate } from 'framer-motion';
+import { stagger, useAnimate } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 export const TextGenerateEffect = ({
@@ -21,24 +21,25 @@ export const TextGenerateEffect = ({
       {
         duration: 2,
         delay: stagger(0.2),
-      },
+      }
     );
-  }, [scope.current]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [animate, scope.current]);
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
+      <div ref={scope}>
         {wordsArray.map((word, idx) => {
           return (
-            <motion.span
+            <span
               key={word + idx}
               className={`${idx > 3 ? 'text-orange-300' : 'text-white'} opacity-0`}
             >
               {word}{' '}
-            </motion.span>
+            </span>
           );
         })}
-      </motion.div>
+      </div>
     );
   };
 

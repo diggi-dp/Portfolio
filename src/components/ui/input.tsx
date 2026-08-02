@@ -2,7 +2,7 @@
 'use client';
 import * as React from 'react';
 import { cn } from '@/lib/utils';
-import { useMotionTemplate, useMotionValue, motion } from 'framer-motion';
+import { useMotionTemplate, useMotionValue } from 'framer-motion';
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
@@ -22,7 +22,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       mouseY.set(clientY - top);
     }
     return (
-      <motion.div
+      <div
         style={{
           background: useMotionTemplate`
         radial-gradient(
@@ -30,7 +30,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           var(--blue-500),
           transparent 80%
         )
-      `,
+      ` as unknown as string,
         }}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setVisible(true)}
@@ -41,14 +41,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           type={type}
           className={cn(
             `dark:placeholder-text-neutral-600 duration-400 flex h-10 w-full rounded-md border-none bg-zinc-600 px-3 py-2 text-sm text-white shadow-input transition file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-white-200 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-neutral-600 disabled:cursor-not-allowed disabled:opacity-50 group-hover/input:shadow-none dark:shadow-[0px_0px_1px_1px_var(--neutral-700)]`,
-            className,
+            className
           )}
           ref={ref}
           {...props}
         />
-      </motion.div>
+      </div>
     );
-  },
+  }
 );
 Input.displayName = 'Input';
 
