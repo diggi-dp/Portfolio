@@ -3,19 +3,18 @@
 import React from 'react';
 import { cameraWaypoints } from '@/lib/animations/cameraTrajectories';
 import { useScrollTimeline } from '@/hooks/useScrollTimeline';
-import { useLenisScroll } from '@/hooks/useLenisScroll';
+import { scrollToChapter } from '@/hooks/useLenisScroll';
 import { useWebAudio } from '@/hooks/useWebAudio';
 
 const SECTION_NUMBERS = ['01', '02', '03', '04', '05', '06'];
 
 export const ChapterIndicator: React.FC = () => {
   const { activeChapterIndex } = useScrollTimeline();
-  const { scrollToProgress } = useLenisScroll();
   const { triggerClickSound } = useWebAudio();
 
-  const handleMarkerClick = (progress: number) => {
+  const handleMarkerClick = (chapterIndex: number) => {
     triggerClickSound();
-    scrollToProgress(progress);
+    scrollToChapter(chapterIndex);
   };
 
   return (
@@ -30,7 +29,7 @@ export const ChapterIndicator: React.FC = () => {
         return (
           <button
             key={wp.chapterIndex}
-            onClick={() => handleMarkerClick(wp.scrollProgress)}
+            onClick={() => handleMarkerClick(wp.chapterIndex)}
             className="group relative flex items-center justify-end focus:outline-none"
             aria-label={`Jump to Section ${sectionNum}: ${wp.chapterTitle}`}
           >

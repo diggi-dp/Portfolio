@@ -2,8 +2,7 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useScrollTimeline } from '@/hooks/useScrollTimeline';
-import { usePointerVector } from '@/hooks/usePointerVector';
+import { liveScrollTelemetry } from '@/hooks/useScrollTimeline';
 import { useAdaptivePerformance } from '@/hooks/useAdaptivePerformance';
 import { PostProcessingPipeline } from '../postprocessing/PostProcessingPipeline';
 import { PrologueScene } from '../scenes/PrologueScene';
@@ -14,37 +13,29 @@ import { SignalScene } from '../scenes/SignalScene';
 import * as THREE from 'three';
 
 const CameraRig: React.FC = () => {
-  const { interpolatedCameraPosition, interpolatedCameraTarget } =
-    useScrollTimeline();
-  const pointer = usePointerVector();
   const targetVec = useRef(new THREE.Vector3());
 
-  useFrame(({ camera }) => {
-    // Parallax mouse offset dampening
+  useFrame(({ camera, pointer }) => {
+    // Parallax mouse offset directly from R3F (zero React re-renders)
     const parallaxX = pointer.x * 0.4;
     const parallaxY = pointer.y * 0.3;
 
+    const pos = liveScrollTelemetry.position;
+    const target = liveScrollTelemetry.target;
+
     camera.position.x = THREE.MathUtils.lerp(
       camera.position.x,
-      interpolatedCameraPosition[0] + parallaxX,
+      pos[0] + parallaxX,
       0.08
     );
     camera.position.y = THREE.MathUtils.lerp(
       camera.position.y,
-      interpolatedCameraPosition[1] + parallaxY,
+      pos[1] + parallaxY,
       0.08
     );
-    camera.position.z = THREE.MathUtils.lerp(
-      camera.position.z,
-      interpolatedCameraPosition[2],
-      0.08
-    );
+    camera.position.z = THREE.MathUtils.lerp(camera.position.z, pos[2], 0.08);
 
-    targetVec.current.set(
-      interpolatedCameraTarget[0],
-      interpolatedCameraTarget[1],
-      interpolatedCameraTarget[2]
-    );
+    targetVec.current.set(target[0], target[1], target[2]);
     camera.lookAt(targetVec.current);
   });
 
@@ -72,11 +63,13 @@ export const WorldCanvas: React.FC = () => {
           antialias: true,
           powerPreference: 'high-performance',
           alpha: false,
+          depth: true,
+          stencil: false,
         }}
       >
         <color attach="background" args={['#05070a']} />
 
-        {/* Dynamic Smooth Camera Rig */}
+        {/* Dynamic Smooth Camera Rig (Zero React Re-render) */}
         <CameraRig />
 
         {/* Cinematic Chapter 3D Scenes */}
@@ -86,7 +79,7 @@ export const WorldCanvas: React.FC = () => {
         <ConstellationScene />
         <SignalScene />
 
-        {/* Postprocessing Shader Effects */}
+        {/* Optimized Selective Bloom Postprocessing */}
         <PostProcessingPipeline />
       </Canvas>
     </div>

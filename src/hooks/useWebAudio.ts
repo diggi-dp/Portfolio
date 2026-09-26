@@ -2,40 +2,42 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { synthEngine } from '@/lib/audio/synthEngine';
-import { soundtrackEngine } from '@/lib/audio/soundtrack';
 import { playUIClick, playCrystalChime } from '@/lib/audio/uiClicks';
 import { playThunderRumble } from '@/lib/audio/stormAudio';
 
 export function useWebAudio() {
-  const [isInitialized, setIsInitialized] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [audioState, setAudioState] = useState(() => ({
+    isInitialized: synthEngine.getIsInitialized(),
+    isMuted: synthEngine.getIsMuted(),
+  }));
 
-  const initAudio = useCallback(() => {
-    const ctx = synthEngine.initialize();
-    if (ctx && ctx.state === 'running') {
-      setIsInitialized(true);
-      soundtrackEngine.init(ctx, synthEngine.getMasterGain() || undefined);
-      soundtrackEngine.play();
-    }
+  // Synchronize state across all components using synthEngine subscription
+  useEffect(() => {
+    return synthEngine.subscribe((state) => {
+      setAudioState({
+        isInitialized: state.isInitialized,
+        isMuted: state.isMuted,
+      });
+    });
   }, []);
 
-  const toggleMute = useCallback(() => {
-    const muted = synthEngine.toggleMute();
-    setIsMuted(muted);
-    if (muted) {
-      soundtrackEngine.stop();
-    } else {
-      soundtrackEngine.play();
-    }
+  const initAudio = useCallback(async () => {
+    await synthEngine.initialize();
+  }, []);
+
+  const toggleMute = useCallback(async () => {
+    await synthEngine.toggleMute();
   }, []);
 
   const triggerClickSound = useCallback(() => {
+    if (synthEngine.getIsMuted()) return;
     const ctx = synthEngine.getAudioContext();
     const master = synthEngine.getMasterGain();
     if (ctx && master) playUIClick(ctx, master);
   }, []);
 
   const triggerChimeSound = useCallback(() => {
+    if (synthEngine.getIsMuted()) return;
     const ctx = synthEngine.getAudioContext();
     const master = synthEngine.getMasterGain();
     if (ctx && master) playCrystalChime(ctx, master);
@@ -50,30 +52,56 @@ export function useWebAudio() {
   }, []);
 
   const triggerThunderSound = useCallback(() => {
+    if (synthEngine.getIsMuted()) return;
     const ctx = synthEngine.getAudioContext();
     const master = synthEngine.getMasterGain();
     if (ctx && master) playThunderRumble(ctx, master);
   }, []);
 
+  // Eagerly initialize on ANY user gesture (click, tap, scroll, keydown)
   useEffect(() => {
+    if (synthEngine.getIsInitialized()) return;
+
     const handleFirstUserGesture = () => {
-      initAudio();
+      synthEngine.initialize();
+      cleanup();
     };
 
-    window.addEventListener('click', handleFirstUserGesture, { once: true });
+    const cleanup = () => {
+      window.removeEventListener('click', handleFirstUserGesture);
+      window.removeEventListener('pointerdown', handleFirstUserGesture);
+      window.removeEventListener('keydown', handleFirstUserGesture);
+      window.removeEventListener('touchstart', handleFirstUserGesture);
+      window.removeEventListener('wheel', handleFirstUserGesture);
+    };
+
+    window.addEventListener('click', handleFirstUserGesture, {
+      once: true,
+      passive: true,
+    });
+    window.addEventListener('pointerdown', handleFirstUserGesture, {
+      once: true,
+      passive: true,
+    });
+    window.addEventListener('keydown', handleFirstUserGesture, {
+      once: true,
+      passive: true,
+    });
     window.addEventListener('touchstart', handleFirstUserGesture, {
       once: true,
+      passive: true,
+    });
+    window.addEventListener('wheel', handleFirstUserGesture, {
+      once: true,
+      passive: true,
     });
 
-    return () => {
-      window.removeEventListener('click', handleFirstUserGesture);
-      window.removeEventListener('touchstart', handleFirstUserGesture);
-    };
-  }, [initAudio]);
+    return cleanup;
+  }, []);
 
   return {
-    isInitialized,
-    isMuted,
+    isInitialized: audioState.isInitialized,
+    isMuted: audioState.isMuted,
     initAudio,
     toggleMute,
     triggerClickSound,

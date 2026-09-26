@@ -7,19 +7,20 @@ export const PostProcessingPipeline: React.FC = () => {
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
-    const timer = setTimeout(() => setMounted(true), 300);
+    const timer = setTimeout(() => setMounted(true), 200);
     return () => clearTimeout(timer);
   }, []);
 
   if (!mounted) return null;
 
   return (
-    <EffectComposer>
-      {/* Selective Vibrant Bloom for Glowing Runes & Relics */}
+    <EffectComposer multisampling={0}>
+      {/* High-performance selective bloom restricted to bright emissive runes & cores */}
       <Bloom
-        intensity={1.2}
-        luminanceThreshold={0.2}
-        luminanceSmoothing={0.9}
+        intensity={0.85}
+        luminanceThreshold={0.85}
+        luminanceSmoothing={0.4}
+        mipmapBlur
       />
     </EffectComposer>
   );

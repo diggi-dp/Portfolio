@@ -106,7 +106,6 @@ export const DeathStrandingHUD: React.FC = () => {
       {/* Bottom Right Interaction Guide */}
       <div className="absolute bottom-6 right-6 hidden md:flex flex-col items-end gap-0.5 text-slate-500 text-[10px]">
         <span>[ PRESS 1-6 TO JUMP CHAPTERS ]</span>
-        <span>[ PRESS M TO TOGGLE SOUND ]</span>
       </div>
     </div>
   );

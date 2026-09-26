@@ -14,6 +14,14 @@ export interface ScrollState {
   interpolatedCameraTarget: [number, number, number];
 }
 
+// Live mutable state for 60fps WebGL render loops without triggering React re-renders
+export const liveScrollTelemetry = {
+  progress: 0,
+  position: [...cameraWaypoints[0].position] as [number, number, number],
+  target: [...cameraWaypoints[0].target] as [number, number, number],
+  activeChapterIndex: 1,
+};
+
 export function useScrollTimeline(): ScrollState {
   const [scrollState, setScrollState] = useState<ScrollState>({
     scrollProgress: 0,
@@ -25,19 +33,23 @@ export function useScrollTimeline(): ScrollState {
 
   useEffect(() => {
     const handleScroll = () => {
-      const totalScroll = document.body.scrollHeight - window.innerHeight;
-      if (totalScroll <= 0) return;
+      const scrollEl = document.documentElement;
+      const totalScroll = Math.max(
+        1,
+        (scrollEl.scrollHeight || document.body.scrollHeight) -
+          window.innerHeight
+      );
 
       const currentScroll = window.scrollY;
       const progress = Math.max(0, Math.min(1, currentScroll / totalScroll));
 
-      // Find active chapter index based on scroll progress boundaries
+      // Symmetrically determine active chapter index (both forward and reverse order)
       let activeIndex = 1;
-      if (progress < 0.12) activeIndex = 1;
-      else if (progress < 0.28) activeIndex = 2;
-      else if (progress < 0.45) activeIndex = 3;
-      else if (progress < 0.65) activeIndex = 4;
-      else if (progress < 0.85) activeIndex = 5;
+      if (progress < 0.1) activeIndex = 1;
+      else if (progress < 0.3) activeIndex = 2;
+      else if (progress < 0.5) activeIndex = 3;
+      else if (progress < 0.7) activeIndex = 4;
+      else if (progress < 0.9) activeIndex = 5;
       else activeIndex = 6;
 
       // Interpolate 3D camera position between waypoints
@@ -81,6 +93,16 @@ export function useScrollTimeline(): ScrollState {
         pos = cameraWaypoints[cameraWaypoints.length - 1].position;
         target = cameraWaypoints[cameraWaypoints.length - 1].target;
       }
+
+      // Update mutable live telemetry for high-performance direct R3F read
+      liveScrollTelemetry.progress = progress;
+      liveScrollTelemetry.position[0] = pos[0];
+      liveScrollTelemetry.position[1] = pos[1];
+      liveScrollTelemetry.position[2] = pos[2];
+      liveScrollTelemetry.target[0] = target[0];
+      liveScrollTelemetry.target[1] = target[1];
+      liveScrollTelemetry.target[2] = target[2];
+      liveScrollTelemetry.activeChapterIndex = activeIndex;
 
       setScrollState({
         scrollProgress: progress,

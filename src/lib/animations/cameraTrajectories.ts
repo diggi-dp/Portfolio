@@ -30,7 +30,7 @@ export const cameraWaypoints: CameraWaypoint[] = [
     runeTitle: 'ᚦᛖ ᛋᚢᛈᛈᛚᛁ ᛚᛁᚾᛖ',
     position: [0, -20, 16],
     target: [0, -22, 0],
-    scrollProgress: 0.35,
+    scrollProgress: 0.4,
   },
   {
     chapterIndex: 4,
@@ -38,7 +38,7 @@ export const cameraWaypoints: CameraWaypoint[] = [
     runeTitle: 'ᚲᚺᚱᛟᚾᛁᚲᛚᛖᛋ ᛟᚠ ᚲᚱᛖᚨᛏᛁᛟᚾ',
     position: [15, -28, 12],
     target: [0, -30, 0],
-    scrollProgress: 0.55,
+    scrollProgress: 0.6,
   },
   {
     chapterIndex: 5,
@@ -46,12 +46,12 @@ export const cameraWaypoints: CameraWaypoint[] = [
     runeTitle: 'ᚦᛖ ᛏᚱᛁᚨᛚ ᛟᚠ ᛗᚨᛋᛏᛖᚱᚾ',
     position: [0, -45, 22],
     target: [0, -45, 0],
-    scrollProgress: 0.75,
+    scrollProgress: 0.8,
   },
   {
     chapterIndex: 6,
     chapterTitle: 'TRANSMISSION NEXUS',
-    runeTitle: 'ᛏᚱᚨᚾᛋᛗᛁᛋᛋᛁᛟᚾ ᚾᛖᛉᚢᛋ',
+    runeTitle: 'ᛏᚱᚨᚾᛋᛘᛁᛋᛋᛁᛟᚾ ᚾᛖᛉᚢᛋ',
     position: [0, -62, 16],
     target: [0, -64, 0],
     scrollProgress: 1.0,

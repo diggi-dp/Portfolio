@@ -15,8 +15,7 @@ import { CustomReticleCursor } from '@/components/ui/cursor/CustomReticleCursor'
 import { ProjectWorldModal } from '@/components/ui/modals/ProjectWorldModal';
 import { ProjectWorldData } from '@/lib/cms/projectsData';
 import { SkillNodeData } from '@/lib/cms/skillsData';
-import { useLenisScroll } from '@/hooks/useLenisScroll';
-import { useWebAudio } from '@/hooks/useWebAudio';
+import { useLenisScroll, scrollToChapter } from '@/hooks/useLenisScroll';
 
 // Dynamic import for WebGL R3F Canvas to disable SSR
 const WorldCanvas = dynamic(
@@ -31,8 +30,8 @@ export default function Home() {
     useState<ProjectWorldData | null>(null);
   const [hoveredSkill] = useState<SkillNodeData | null>(null);
 
-  const { scrollToProgress } = useLenisScroll();
-  const { toggleMute } = useWebAudio();
+  // Initialize shared Lenis smooth scroll
+  useLenisScroll();
 
   useEffect(() => {
     let mountedTimer: NodeJS.Timeout | null = null;
@@ -67,33 +66,30 @@ export default function Home() {
       once: true,
     });
 
-    mountedTimer = setTimeout(mountCanvas, 2200);
+    mountedTimer = setTimeout(mountCanvas, 1500);
 
     return cleanup;
   }, []);
 
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      const activeEl = document.activeElement as HTMLElement | null;
-      if (
-        activeEl &&
-        (activeEl.tagName === 'INPUT' ||
-          activeEl.tagName === 'TEXTAREA' ||
-          activeEl.isContentEditable)
-      ) {
-        return;
-      }
-      if (e.key === '1') scrollToProgress(0.0);
-      if (e.key === '2') scrollToProgress(0.2);
-      if (e.key === '3') scrollToProgress(0.35);
-      if (e.key === '4') scrollToProgress(0.55);
-      if (e.key === '5') scrollToProgress(0.75);
-      if (e.key === '6') scrollToProgress(1.0);
-      if (e.key === 'm' || e.key === 'M') toggleMute();
-      if (e.key === 'Escape') setSelectedProject(null);
-    },
-    [scrollToProgress, toggleMute]
-  );
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    const activeEl = document.activeElement as HTMLElement | null;
+    if (
+      activeEl &&
+      (activeEl.tagName === 'INPUT' ||
+        activeEl.tagName === 'TEXTAREA' ||
+        activeEl.isContentEditable)
+    ) {
+      return;
+    }
+    // Jump to chapters 1-6 in both directions (forward and backward)
+    if (e.key === '1') scrollToChapter(1);
+    if (e.key === '2') scrollToChapter(2);
+    if (e.key === '3') scrollToChapter(3);
+    if (e.key === '4') scrollToChapter(4);
+    if (e.key === '5') scrollToChapter(5);
+    if (e.key === '6') scrollToChapter(6);
+    if (e.key === 'Escape') setSelectedProject(null);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -111,35 +107,53 @@ export default function Home() {
       <AudioControlHUD />
       <ChapterIndicator />
 
-      {/* Chapter Story Overlay Containers */}
+      {/* Chapter Story Overlay Containers with explicit section IDs */}
       <div className="relative z-10 w-full pointer-events-none">
         {/* Chapter I: The Frozen Ridge */}
-        <section className="min-h-screen flex items-center justify-center py-20">
+        <section
+          id="chapter-1"
+          className="min-h-screen flex items-center justify-center py-20"
+        >
           <Chapter1HeroStory />
         </section>
 
         {/* Chapter II: The Chamber of Equilibrium */}
-        <section className="min-h-screen flex items-center justify-center py-20">
+        <section
+          id="chapter-2"
+          className="min-h-screen flex items-center justify-center py-20"
+        >
           <Chapter2ForgeStory />
         </section>
 
         {/* Chapter III: The Supply Line */}
-        <section className="min-h-screen flex items-center justify-center py-20">
+        <section
+          id="chapter-3"
+          className="min-h-screen flex items-center justify-center py-20"
+        >
           <Chapter3CareerStory />
         </section>
 
         {/* Chapter IV: Chronicles of Creation */}
-        <section className="min-h-screen flex items-center justify-center py-20">
+        <section
+          id="chapter-4"
+          className="min-h-screen flex items-center justify-center py-20"
+        >
           <Chapter3RelicsStory onSelectProject={setSelectedProject} />
         </section>
 
         {/* Chapter V: The Trial of Mastery */}
-        <section className="min-h-screen flex items-center justify-center py-20">
+        <section
+          id="chapter-5"
+          className="min-h-screen flex items-center justify-center py-20"
+        >
           <Chapter4ConstellationStory hoveredSkill={hoveredSkill} />
         </section>
 
         {/* Chapter VI: Transmission Nexus */}
-        <section className="min-h-screen flex items-center justify-center py-20">
+        <section
+          id="chapter-6"
+          className="min-h-screen flex items-center justify-center py-20"
+        >
           <Chapter5SignalStory />
         </section>
       </div>
