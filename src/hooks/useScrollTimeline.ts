@@ -33,11 +33,12 @@ export function useScrollTimeline(): ScrollState {
 
       // Find active chapter index based on scroll progress boundaries
       let activeIndex = 1;
-      if (progress < 0.15) activeIndex = 1;
-      else if (progress < 0.38) activeIndex = 2;
-      else if (progress < 0.63) activeIndex = 3;
-      else if (progress < 0.88) activeIndex = 4;
-      else activeIndex = 5;
+      if (progress < 0.12) activeIndex = 1;
+      else if (progress < 0.28) activeIndex = 2;
+      else if (progress < 0.45) activeIndex = 3;
+      else if (progress < 0.65) activeIndex = 4;
+      else if (progress < 0.85) activeIndex = 5;
+      else activeIndex = 6;
 
       // Interpolate 3D camera position between waypoints
       let pos: [number, number, number] = cameraWaypoints[0].position;

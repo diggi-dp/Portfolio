@@ -132,34 +132,29 @@ export const SkillsData = [
 
 export const experiencesData: Experience[] = [
   {
-    title: 'Software Engineer',
-    company: 'Inara Consultancy Services',
+    title: 'Full-Stack Developer',
+    company: 'Sciens Logistics',
     description: [
-      '🚀 Developed and maintained PMS and Wave-microservice projects using NextJs, Antd, NodeJs, Nx.',
-      '🎨 Used UI libraries such as Ant Design.',
-      '🌐 Designed and implemented RESTful APIs using Node.js, NestJS, and Express.js',
-      '💻 Implemented various features and delivered high-quality code.',
-      '🔧 Refactored existing code to improve performance and maintainability',
-      '🔗 Collaborated with backend developers to integrate RESTful APIs.',
-      '🕷️ Fixed defects communicated by testers.',
-      '💻 Developed code based on requirements analysis, bug fixing, and product maintenance.',
-      '📊 Used various CMS such as keystoneJS, TinaCMS',
-      '📈 Worked on multiple projects such as PMS, Stride, Atlantis Health etc.',
+      '🚀 Building the core shipment management platform for a global freight-forwarding operation.',
+      '📦 Architected multi-leg shipment workflows — stages, legs, layovers, and OBC assignment.',
+      '📱 Designed and built Halo, the courier-facing app for real-time milestone updates from the field.',
+      '🔄 Using TanStack Query to keep shipment data in sync across the UI as it changes.',
     ],
     icon: createIcon('workAlt', { size: 40 }),
-    date: ' Aug 2023 - Present',
+    date: 'Sep 2026 - Present',
   },
   {
     title: 'Software Engineer',
-    company: 'CreativeEncode technology',
+    company: 'Inara Consultancy Services',
     description: [
-      '🚀 Developed and maintained UI components using modern React libraries',
-      '📱 Implemented responsive design for mobile and web applications.',
-      '📚 Learned Next.js and created an admin panel.',
-      '📊 Created a quiz app using React Native.',
+      '🚀 Led frontend development for Stride, an enterprise experience-management platform.',
+      '🔧 Built the Stride Chrome Extension — a Manifest V3 live web injector syncing with Adobe Target, AEM, and Contentful.',
+      '📈 Cut redundant API calls 25%, editor load times 50%, and UI time-to-market 40%.',
+      '💻 Built reusable, modular UI components and implemented Redux for predictable state management.',
+      '🔗 Implemented Auth0-based authentication, managing multiple organizations and user roles efficiently.',
     ],
     icon: createIcon('workAlt', { size: 40 }),
-    date: 'April 2023 - Aug 2023',
+    date: 'Sep 2023 - Aug 2026',
   },
 ];
 

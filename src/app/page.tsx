@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { Chapter1HeroStory } from '@/components/story/Chapter1HeroStory';
 import { Chapter2ForgeStory } from '@/components/story/Chapter2ForgeStory';
+import { Chapter3CareerStory } from '@/components/story/Chapter3CareerStory';
 import { Chapter3RelicsStory } from '@/components/story/Chapter3RelicsStory';
 import { Chapter4ConstellationStory } from '@/components/story/Chapter4ConstellationStory';
 import { Chapter5SignalStory } from '@/components/story/Chapter5SignalStory';
@@ -83,10 +84,11 @@ export default function Home() {
         return;
       }
       if (e.key === '1') scrollToProgress(0.0);
-      if (e.key === '2') scrollToProgress(0.25);
-      if (e.key === '3') scrollToProgress(0.5);
-      if (e.key === '4') scrollToProgress(0.75);
-      if (e.key === '5') scrollToProgress(1.0);
+      if (e.key === '2') scrollToProgress(0.2);
+      if (e.key === '3') scrollToProgress(0.35);
+      if (e.key === '4') scrollToProgress(0.55);
+      if (e.key === '5') scrollToProgress(0.75);
+      if (e.key === '6') scrollToProgress(1.0);
       if (e.key === 'm' || e.key === 'M') toggleMute();
       if (e.key === 'Escape') setSelectedProject(null);
     },
@@ -99,7 +101,7 @@ export default function Home() {
   }, [handleKeyDown]);
 
   return (
-    <main className="relative min-h-[500vh] bg-obsidian-950 text-slate-100 selection:bg-cyan-hud selection:text-obsidian-950">
+    <main className="relative min-h-[600vh] bg-obsidian-950 text-slate-100 selection:bg-cyan-hud selection:text-obsidian-950">
       {/* 3D WebGL Canvas Layer */}
       {isMounted && <WorldCanvas />}
 
@@ -121,17 +123,22 @@ export default function Home() {
           <Chapter2ForgeStory />
         </section>
 
-        {/* Chapter III: Chronicles of Creation */}
+        {/* Chapter III: The Supply Line */}
+        <section className="min-h-screen flex items-center justify-center py-20">
+          <Chapter3CareerStory />
+        </section>
+
+        {/* Chapter IV: Chronicles of Creation */}
         <section className="min-h-screen flex items-center justify-center py-20">
           <Chapter3RelicsStory onSelectProject={setSelectedProject} />
         </section>
 
-        {/* Chapter IV: The Trial of Mastery */}
+        {/* Chapter V: The Trial of Mastery */}
         <section className="min-h-screen flex items-center justify-center py-20">
           <Chapter4ConstellationStory hoveredSkill={hoveredSkill} />
         </section>
 
-        {/* Chapter V: Transmission Nexus */}
+        {/* Chapter VI: Transmission Nexus */}
         <section className="min-h-screen flex items-center justify-center py-20">
           <Chapter5SignalStory />
         </section>

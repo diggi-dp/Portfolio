@@ -13,10 +13,19 @@ export interface ProjectConfigData {
   lessonsLearned: string;
   liveUrl?: string;
   githubUrl?: string;
+  isClassified?: boolean;
+}
+
+export interface CareerEntry {
+  status: 'active' | 'archived';
+  role: string;
+  company: string;
+  period: string;
+  description: string;
 }
 
 export const siteConfig = {
-  name: 'Digpal Singh Mandloi | SOFTWARE ENGINEER',
+  name: 'Digpal Singh Mandloi | FULL-STACK ENGINEER',
   shortName: 'Digpal Mandloi',
   description:
     'An interactive 3D cinematic experience showcasing high-performance distributed systems, WebGL architecture, and real-time graphics engineering.',
@@ -27,8 +36,9 @@ export const siteConfig = {
     name: 'DIGPAL SINGH MANDLOI',
     shortName: 'Digpal Mandloi',
     title: 'SOFTWARE ENGINEER',
-    subtitle: 'FULL-STACK DEVELOPER (REACT.JS || NEXT.JS || NODE.JS)',
-    bio: 'Results-driven Software Developer with a strong focus on frontend technologies coupled with backend expertise, boasting 3+ years of experience in crafting scalable web applications using React.js, Next.js, Node.js and Express.js.',
+    subtitle:
+      'FULL-STACK DEVELOPER — FRONTEND-FIRST (REACT.JS || NEXT.JS || NODE.JS)',
+    bio: 'Full-stack developer who leads with frontend — React.js and Next.js are first instinct, Node.js and Express.js close the loop when a feature needs to own its own data. 3+ years shipping production systems: an enterprise experience-authoring platform, a live Chrome injection engine, and now a real-time shipment and courier-tracking platform running end-to-end logistics operations.',
     location: 'Indore, M.P., India',
     coordinates: "64°08'N 21°56'W",
   },
@@ -40,7 +50,7 @@ export const siteConfig = {
     resume: '/resume.pdf',
   },
   hero: {
-    badge: 'SOFTWARE ENGINEER || INDORE, INDIA',
+    badge: 'SOFTWARE ENGINEER || SCIENS LOGISTICS || INDORE, INDIA',
     scrollDirective: '[ SCROLL DOWN TO TRAVEL THROUGH CHAPTERS ]',
   },
   chapters: {
@@ -76,16 +86,47 @@ export const siteConfig = {
           description:
             'Designed sub-second live script injection extension syncing with Adobe Target, AEM, & Contentful for real-time validation.',
         },
+        {
+          id: 'puzzle-4',
+          title: 'REAL-TIME LOGISTICS CONTROL',
+          subtitle: 'Shipment, OBC & Milestone Systems',
+          description:
+            'Architected multi-leg shipment workflows — stages, legs, layovers, and onboard-courier assignment — plus Halo, a courier-facing app for live milestone updates from the field.',
+        },
       ],
     },
     chapter3: {
-      tag: '[ CHAPTER III: CHRONICLES OF CREATION ]',
+      tag: '[ CHAPTER III: THE SUPPLY LINE ]',
+      title: 'CAREER TRANSMISSION LOG',
+      subtitle:
+        'Operational history — active deployments and archived missions.',
+      careers: [
+        {
+          status: 'active',
+          role: 'FULL-STACK DEVELOPER',
+          company: 'SCIENS LOGISTICS',
+          period: 'SEP 2026 — PRESENT',
+          description:
+            'Building the core shipment management platform for a global freight-forwarding operation: shipment creation, multi-leg stage/leg/layover configuration, and OBC (Onboard Courier) assignment. Designed and built Halo, the courier-facing app for real-time milestone updates from the field. Using TanStack Query to keep shipment data in sync across the UI as it changes.',
+        },
+        {
+          status: 'archived',
+          role: 'SOFTWARE ENGINEER',
+          company: 'INARA CONSULTANCY SERVICES',
+          period: 'SEP 2023 — AUG 2026',
+          description:
+            'Led frontend development for Stride, an enterprise experience-management platform enabling non-technical teams to author and preview live web experiences. Built the Stride Chrome Extension — a Manifest V3 live web injector syncing with Adobe Target, AEM, and Contentful. Cut redundant API calls 25%, editor load times 50%, and UI time-to-market 40%.',
+        },
+      ] as CareerEntry[],
+    },
+    chapter4: {
+      tag: '[ CHAPTER IV: CHRONICLES OF CREATION ]',
       title: 'THE DIMENSIONAL ARCHIVES',
       subtitle:
         'Select any project below to launch its full 3D interactive world, live metrics, and enterprise architecture blueprint.',
     },
-    chapter4: {
-      tag: '[ CHAPTER IV: THE TRIAL OF MASTERY ]',
+    chapter5: {
+      tag: '[ CHAPTER V: THE TRIAL OF MASTERY ]',
       title: 'TECHNOLOGY CONSTELLATION & MASTERY',
       subtitle:
         'A comprehensive breakdown of core engineering proficiencies powering modern web applications and tools.',
@@ -106,8 +147,8 @@ export const siteConfig = {
         {
           title: 'STATE & DATA FETCHING',
           skills: [
-            'Redux Toolkit',
             'TanStack Query',
+            'Redux Toolkit',
             'RESTful APIs',
             'Performance Optimization',
             'Code Refactoring',
@@ -138,46 +179,107 @@ export const siteConfig = {
         },
       ],
     },
-    chapter5: {
-      tag: '[ CHAPTER V: TRANSMISSION NEXUS ]',
+    chapter6: {
+      tag: '[ CHAPTER VI: TRANSMISSION NEXUS ]',
       title: 'INITIATE SIGNAL TRANSMISSION',
       subtitle:
-        'Ready to collaborate on high-impact full-stack web platforms or enterprise tools? Send a direct message below.',
+        'Ready to collaborate on high-impact full-stack platforms — from enterprise authoring tools to real-time logistics systems? Send a direct message below.',
     },
   },
   experiences: [
     {
-      company: 'Inara Consultancy Services',
-      role: 'Software Engineer',
-      period: 'Sep 2023 - Present',
+      company: 'Sciens Logistics',
+      role: 'Full-Stack Developer',
+      period: 'Sep 2026 - Present',
       highlights: [
-        'Led frontend development for the Stride experience management platform, enabling teams to author, preview, and validate personalized web experiences and offers.',
-        'Built reusable, modular UI components and implemented Redux for predictable state management across the editor and dashboard.',
-        'Designed and implemented a Chrome extension for real-time preview and editing on live and staging sites; owned development, deployment, and maintenance.',
-        'Integrated with third-party systems including Adobe Target, AEM, Contentful, and GitHub to enable content sync and deployment workflows.',
-        'Optimized data fetching and caching strategies, reducing redundant API requests by 25% and improving editor load times by 50%.',
-        'Increased overall workflow efficiency and reduced time-to-market for UI updates by 40% through component reuse and editor improvements.',
-        'Delivered high client satisfaction through rapid iteration and responsive support.',
-        'Implemented Auth0-based authentication, managing multiple organizations and user roles efficiently.',
+        'Building the core shipment management platform for a global freight-forwarding operation.',
+        'Architected multi-leg shipment workflows — stages, legs, layovers, and OBC assignment.',
+        'Designed and built Halo, the courier-facing app for real-time milestone updates from the field.',
+        'Using TanStack Query to keep shipment data in sync across the UI as it changes.',
       ],
     },
     {
-      company: 'Creative Encode Technologies',
+      company: 'Inara Consultancy Services',
       role: 'Software Engineer',
-      period: 'April 2023 – Sep 2023',
+      period: 'Sep 2023 - Aug 2026',
       highlights: [
-        'Built and maintained UI components using React.js and Next.js.',
-        'Implemented TanStack Query to optimize data fetching and caching, reducing redundant API calls by 50%.',
-        'Improved state management and reduced unnecessary re-renders, enhancing app performance and maintainability.',
-        'Built a React Native quiz app to increase mobile engagement and cross-platform reach.',
+        'Led frontend development for Stride, an enterprise experience-management platform enabling non-technical teams to author and preview live web experiences.',
+        'Built the Stride Chrome Extension — a Manifest V3 live web injector syncing with Adobe Target, AEM, and Contentful.',
+        'Cut redundant API calls 25%, editor load times 50%, and UI time-to-market 40%.',
+        'Built reusable, modular UI components and implemented Redux for predictable state management.',
+        'Implemented Auth0-based authentication, managing multiple organizations and user roles efficiently.',
       ],
     },
   ],
   achievements: [
     'Top Performer at Inara Consultancy Services for delivering high-quality software solutions.',
     'Recognized for reducing frontend development time by 30% through optimized component reusability.',
+    'Architected the core shipment management platform at Sciens Logistics.',
   ],
   projects: [
+    {
+      id: 'shipment-obc-platform',
+      title: 'SHIPMENT & OBC ORCHESTRATION PLATFORM',
+      subtitle: 'Real-Time Multi-Leg Shipment & Courier Assignment Engine',
+      image: '/assets/images/stride.png',
+      relicGeometry: 'icosahedron',
+      color: '#4ef2d2',
+      architecture:
+        'Architected the core shipment management platform for a global freight-forwarding operation — shipment creation, multi-leg stage/leg/layover configuration, and OBC (Onboard Courier) assignment.',
+      challenges: [
+        'Designing multi-leg shipment workflows with dynamic stage/leg/layover configuration.',
+        'Building real-time OBC assignment and tracking across distributed courier networks.',
+        'Keeping shipment data in sync across the UI using TanStack Query.',
+      ],
+      stack: [
+        'React.js',
+        'Next.js',
+        'TypeScript',
+        'TanStack Query',
+        'Node.js',
+        'Tailwind CSS',
+        'Shadcn UI',
+      ],
+      timeline: 'Sep 2026 - Present',
+      metrics: [
+        { label: 'Multi-Leg Workflow Automation', value: '100%' },
+        { label: 'Real-Time Data Sync Latency', value: '<200ms' },
+      ],
+      lessonsLearned:
+        'TanStack Query mutation/invalidation patterns are essential for keeping complex multi-entity UIs in sync without manual cache management.',
+      isClassified: true,
+    },
+    {
+      id: 'halo-obc-app',
+      title: 'HALO — OBC FIELD APPLICATION',
+      subtitle: 'Courier-Facing Real-Time Milestone Update Interface',
+      image: '/assets/images/stride.png',
+      relicGeometry: 'cube',
+      color: '#dfa84a',
+      architecture:
+        'Designed and built Halo, a mobile-first courier-facing application for real-time milestone updates from the field, integrated with the shipment management platform.',
+      challenges: [
+        'Building a mobile-first interface optimized for field couriers with unreliable connectivity.',
+        'Implementing real-time milestone update workflows with offline-first data sync.',
+        'Integrating with the shipment platform for live status propagation.',
+      ],
+      stack: [
+        'React.js',
+        'TypeScript',
+        'TanStack Query',
+        'Tailwind CSS',
+        'Shadcn UI',
+        'PWA',
+      ],
+      timeline: 'Sep 2026 - Present',
+      metrics: [
+        { label: 'Milestone Update Speed', value: 'Real-Time' },
+        { label: 'Mobile-First Coverage', value: '100%' },
+      ],
+      lessonsLearned:
+        'Mobile-first field applications demand aggressive offline-first strategies and graceful degradation for unreliable network conditions.',
+      isClassified: true,
+    },
     {
       id: 'stride-platform',
       title: 'STRIDE EXPERIENCE MANAGEMENT PLATFORM',
@@ -204,7 +306,7 @@ export const siteConfig = {
         'Nx Monorepo',
         'Tailwind CSS',
       ],
-      timeline: 'Sep 2023 - Present',
+      timeline: 'Sep 2023 - Aug 2026',
       metrics: [
         { label: 'Data Visualization Efficiency Boost', value: '40%' },
         { label: 'User Workflow Efficiency Boost', value: '35%' },
@@ -237,7 +339,7 @@ export const siteConfig = {
         'GitHub API',
         'REST API',
       ],
-      timeline: 'Sep 2023 - Present',
+      timeline: 'Sep 2023 - Aug 2026',
       metrics: [
         {
           label: 'Template Modification & Validation Time Reduction',

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CheckCircle2, Shield, Zap, Lock } from 'lucide-react';
+import { CheckCircle2, Shield, Zap, Lock, Truck } from 'lucide-react';
 import { useWebAudio } from '@/hooks/useWebAudio';
 import { siteConfig } from '@/lib/config/site.config';
 
@@ -16,8 +16,10 @@ export const Chapter2ForgeStory: React.FC = () => {
           <Shield className="w-6 h-6 text-amber-400" />
         ) : idx === 1 ? (
           <Zap className="w-6 h-6 text-cyan-400" />
-        ) : (
+        ) : idx === 2 ? (
           <Lock className="w-6 h-6 text-emerald-400" />
+        ) : (
+          <Truck className="w-6 h-6 text-purple-400" />
         ),
       solved: idx === 0,
     }))
@@ -52,7 +54,7 @@ export const Chapter2ForgeStory: React.FC = () => {
       </p>
 
       {/* Mindset Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {puzzles.map((puzzle) => (
           <div
             key={puzzle.id}

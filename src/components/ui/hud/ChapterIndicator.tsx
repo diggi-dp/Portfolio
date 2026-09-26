@@ -6,7 +6,7 @@ import { useScrollTimeline } from '@/hooks/useScrollTimeline';
 import { useLenisScroll } from '@/hooks/useLenisScroll';
 import { useWebAudio } from '@/hooks/useWebAudio';
 
-const SECTION_NUMBERS = ['01', '02', '03', '04', '05'];
+const SECTION_NUMBERS = ['01', '02', '03', '04', '05', '06'];
 
 export const ChapterIndicator: React.FC = () => {
   const { activeChapterIndex } = useScrollTimeline();

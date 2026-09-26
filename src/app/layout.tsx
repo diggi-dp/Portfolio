@@ -30,11 +30,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Digpal Singh Mandloi | Software Developer & Full-Stack Engineer',
+    default:
+      'Digpal Singh Mandloi | Full-Stack Engineer — React.js, Next.js, Node.js',
     template: '%s | Digpal Singh Mandloi',
   },
   description:
-    'Official Portfolio of Digpal Singh Mandloi - Software Developer with 3+ years of experience engineering high-performance web applications using React.js, Next.js, Node.js, Express.js, and Three.js.',
+    'Portfolio of Digpal Singh Mandloi — Full-Stack Software Engineer with 3+ years building high-performance web applications and real-time operational platforms using React.js, Next.js, Node.js, and Three.js. Currently engineering shipment & logistics systems at Sciens Logistics.',
   authors: [{ name: 'Digpal Singh Mandloi', url: siteConfig.url }],
   creator: 'Digpal Singh Mandloi',
   publisher: 'Digpal Singh Mandloi',
@@ -50,7 +51,9 @@ export const metadata: Metadata = {
     'WebGL Portfolio',
     'TypeScript Developer',
     'Frontend Architect',
-    'Software Engineer India',
+    'Logistics Software Engineer',
+    'Shipment Tracking Systems',
+    'TanStack Query Developer',
     'Web Performance Optimization',
     'Redux Toolkit Specialist',
     'Tailwind CSS',
@@ -68,9 +71,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Digpal Singh Mandloi | Software Developer Portfolio',
+    title: 'Digpal Singh Mandloi | Full-Stack Engineer Portfolio',
     description:
-      'Explore the interactive cinematic portfolio of Digpal Singh Mandloi - 3+ years experience crafting scalable enterprise frontend & backend applications.',
+      'Explore the interactive cinematic portfolio of Digpal Singh Mandloi — 3+ years engineering scalable frontend & backend systems, from enterprise experience platforms to real-time logistics infrastructure.',
     url: siteConfig.url,
     siteName: 'Digpal Singh Mandloi Portfolio',
     locale: 'en_US',
@@ -78,9 +81,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digpal Singh Mandloi | Software Developer',
+    title: 'Digpal Singh Mandloi | Full-Stack Engineer',
     description:
-      'Full-Stack & Frontend Engineer specializing in React.js, Next.js, Node.js, and high-performance WebGL experiences.',
+      'Full-Stack & Frontend Engineer specializing in React.js, Next.js, Node.js, and real-time operational systems.',
   },
   alternates: {
     canonical: siteConfig.url,
@@ -99,10 +102,10 @@ export default function RootLayout({
         '@type': 'Person',
         '@id': `${siteConfig.url}/#person`,
         name: 'Digpal Singh Mandloi',
-        jobTitle: 'Software Developer',
+        jobTitle: 'Full-Stack Developer',
         worksFor: {
           '@type': 'Organization',
-          name: 'Inara Consultancy Services',
+          name: 'Sciens Logistics',
         },
         url: siteConfig.url,
         email: 'mailto:digpalsinghmandloi1@gmail.com',
@@ -126,11 +129,13 @@ export default function RootLayout({
           'TypeScript',
           'Three.js',
           'Redux Toolkit',
+          'TanStack Query',
           'Tailwind CSS',
           'RESTful APIs',
           'Frontend Engineering',
           'State Management',
           'Performance Optimization',
+          'Shipment Tracking Systems',
         ],
       },
       {
@@ -139,7 +144,7 @@ export default function RootLayout({
         url: siteConfig.url,
         name: 'Digpal Singh Mandloi Portfolio',
         description:
-          'Official Interactive Portfolio of Digpal Singh Mandloi - Software Developer.',
+          'Official Interactive Portfolio of Digpal Singh Mandloi - Full-Stack Engineer.',
         author: {
           '@id': `${siteConfig.url}/#person`,
         },
